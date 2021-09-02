@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalTime;
 
 // This is a Spring Entity.
 // It represents a Model in MVC.
@@ -34,4 +35,5 @@ public class Tweet {
     public String getBody() {
         return body;
     }
+
 }
