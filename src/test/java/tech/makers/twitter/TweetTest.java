@@ -21,7 +21,7 @@ public class TweetTest {
 
     @Test
     void testConstructs() {
-        Tweet subject = new Tweet("Hello, world!");
+        Tweet subject = new Tweet("Hello, world!", mockClock);
         assertEquals("Hello, world!", subject.getBody());
         assertEquals(null, subject.getId());
         assertEquals(LocalDateTime.now(mockClock), subject.getCreatedAt());
@@ -29,7 +29,7 @@ public class TweetTest {
 
     @Test
     void testToString() {
-        Tweet subject = new Tweet("Hello, world!");
-        assertEquals("Tweet[id=null, body='Hello, world!']", subject.toString());
+        Tweet subject = new Tweet("Hello, world!", mockClock);
+        assertEquals("Tweet[id=null, body='Hello, world!', createdAt=" + LocalDateTime.now(mockClock) + "]", subject.toString());
     }
 }
